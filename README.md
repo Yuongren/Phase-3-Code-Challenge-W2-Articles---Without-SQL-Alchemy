@@ -57,7 +57,7 @@ Write the following methods in the classes in the files provided. Feel free to b
   * Names must be of type str
   * Names must be between 2 and 16 characters, inclusive
   * Should be able to change after the magazine is instantiated.
-  * Magazine property category
+* Magazine property category
   * Returns the magazine's category
   * Categories must be of type str
   * Categories must be longer than 0 characters
