@@ -1,3 +1,6 @@
+from author import Author
+from magazine import Magazine
+
 class Article:
     def __init__(self, author, magazine, title):
         if not isinstance(author, Author):

@@ -1,3 +1,5 @@
+from article import Article
+
 class Magazine:
     def __init__(self, name, category):
         if not isinstance(name, str):
