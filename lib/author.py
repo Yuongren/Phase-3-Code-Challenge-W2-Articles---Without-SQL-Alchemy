@@ -1,26 +1,23 @@
 class Author:
-    
     def __init__(self, name):
         if not isinstance(name, str):
-            raise TypeError("name must be a string")
+            raise ValueError("Name must be a string")
         if len(name) == 0:
             raise ValueError("Name must be longer than 0 characters")
-        self.name = name
-
+        
+        self._name = name
+        self._articles = []
+        
     @property
     def name(self):
         return self._name
     
-    @name.setter
-    def name(self, value):
-        if hasattr(self, "_name"):
-            raise AttributeError("Name cannot be changed once set")
-        if not isinstance(value, str):
-            raise TypeError("Name must be a string")
-        if len(value) == 0:
-            raise ValueError("Name must be longer than 0 characters")
-        self._name = value
-
-    @property
-    def name(self):
-        return self._name
+    def articles(self):
+        return self._articles
+    
+    def magazines(self):
+        return list(set(article.magazine for article in self._articles))
+    
+    def write_article(self, article):
+        if isinstance(article, Article):
+            self._articles.append(article)
